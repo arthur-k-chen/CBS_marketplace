@@ -1,0 +1,129 @@
+{
+  "users": [
+    {
+      "id": "4a91f14b-dc13-40af-a4cb-0813ed904fc0",
+      "name": "John Doe",
+      "email": "jd1234@columbia.edu",
+      "password": "$2b$10$0QRA7ezXHUivFtKW6xeM3e31ggHIdMiro/Hb3M54rqDZVc9bZUSlO",
+      "school": "CC",
+      "year": "26",
+      "rating": 4.8,
+      "createdAt": "2025-10-29T14:54:30.907Z"
+    },
+    {
+      "id": "2cc6676b-9624-4a46-9eb2-28201fcdc27e",
+      "name": "Sarah Martinez",
+      "email": "sm5678@columbia.edu",
+      "password": "$2b$10$0QRA7ezXHUivFtKW6xeM3e31ggHIdMiro/Hb3M54rqDZVc9bZUSlO",
+      "school": "SEAS",
+      "year": "26",
+      "rating": 4.635132286459707,
+      "createdAt": "2025-10-29T14:54:30.907Z"
+    },
+    {
+      "id": "a1d76ca0-f25b-4cf8-9f41-b8925cc6219c",
+      "name": "Alex Kim",
+      "email": "ak9012@columbia.edu",
+      "password": "$2b$10$0QRA7ezXHUivFtKW6xeM3e31ggHIdMiro/Hb3M54rqDZVc9bZUSlO",
+      "school": "CC",
+      "year": "25",
+      "rating": 4.842047138253221,
+      "createdAt": "2025-10-29T14:54:30.907Z"
+    },
+    {
+      "id": "ae22c2ee-932b-4748-b6c6-733014a4c262",
+      "name": "Mike Rodriguez",
+      "email": "mr3456@columbia.edu",
+      "password": "$2b$10$0QRA7ezXHUivFtKW6xeM3e31ggHIdMiro/Hb3M54rqDZVc9bZUSlO",
+      "school": "CC",
+      "year": "26",
+      "rating": 4.706851513118431,
+      "createdAt": "2025-10-29T14:54:30.907Z"
+    },
+    {
+      "id": "cda39cf6-43de-41fc-b492-09b8c78c3217",
+      "name": "Emma Lee",
+      "email": "el7890@columbia.edu",
+      "password": "$2b$10$0QRA7ezXHUivFtKW6xeM3e31ggHIdMiro/Hb3M54rqDZVc9bZUSlO",
+      "school": "GS",
+      "year": "27",
+      "rating": 4.828790630824989,
+      "createdAt": "2025-10-29T14:54:30.907Z"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "0272c666-d958-40f9-a0a8-3968c8e12e90",
+      "title": "Columbia vs. Yale Football",
+      "category": "Sports",
+      "date": "2025-11-16",
+      "time": "12:00 PM",
+      "location": "Baker Athletics Complex",
+      "quantity": 2,
+      "price": 45,
+      "section": "Section B, Row 12",
+      "description": "Great seats for the big game! Selling because I have a conflict.",
+      "sellerId": "2cc6676b-9624-4a46-9eb2-28201fcdc27e",
+      "sellerName": "Sarah M.",
+      "sellerSchool": "SEAS '26",
+      "status": "active",
+      "views": 34,
+      "createdAt": "2025-10-29T14:54:30.907Z"
+    },
+    {
+      "id": "16033917-5214-4bd7-814f-796ee3d91ee9",
+      "title": "Varsity Show 2025",
+      "category": "Theater",
+      "date": "2025-04-11",
+      "time": "8:00 PM",
+      "location": "Minor Latham Playhouse",
+      "quantity": 1,
+      "price": 30,
+      "section": "Orchestra, Row F",
+      "description": "Single ticket to this year's Varsity Show. Can't make it anymore.",
+      "sellerId": "a1d76ca0-f25b-4cf8-9f41-b8925cc6219c",
+      "sellerName": "Alex K.",
+      "sellerSchool": "CC '25",
+      "status": "active",
+      "views": 28,
+      "createdAt": "2025-10-29T14:54:30.907Z"
+    },
+    {
+      "id": "846b7cd9-272b-41d8-a214-cdb679358a20",
+      "title": "Spring Formal - Kappa Sigma",
+      "category": "Greek Life",
+      "date": "2025-05-03",
+      "time": "9:00 PM",
+      "location": "Hudson Terrace",
+      "quantity": 1,
+      "price": 80,
+      "section": "General Admission",
+      "description": "Spring formal ticket. Great venue and DJ lineup!",
+      "sellerId": "ae22c2ee-932b-4748-b6c6-733014a4c262",
+      "sellerName": "Mike R.",
+      "sellerSchool": "CC '26",
+      "status": "active",
+      "views": 19,
+      "createdAt": "2025-10-29T14:54:30.907Z"
+    },
+    {
+      "id": "0839eac9-091e-41c2-bb15-7c163688855f",
+      "title": "Men's Basketball vs Princeton",
+      "category": "Sports",
+      "date": "2025-01-21",
+      "time": "7:00 PM",
+      "location": "Levien Gymnasium",
+      "quantity": 3,
+      "price": 25,
+      "section": "Courtside",
+      "description": "Three courtside seats! Amazing view of the game.",
+      "sellerId": "cda39cf6-43de-41fc-b492-09b8c78c3217",
+      "sellerName": "Emma L.",
+      "sellerSchool": "GS '27",
+      "status": "active",
+      "views": 42,
+      "createdAt": "2025-10-29T14:54:30.907Z"
+    }
+  ],
+  "transactions": []
+}
