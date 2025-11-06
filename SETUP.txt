@@ -1,0 +1,242 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║        🎫 COLUMBIA TICKET EXCHANGE - SETUP INSTRUCTIONS             ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+📦 WHAT'S INCLUDED
+═══════════════════════════════════════════════════════════════════════
+
+✅ Complete backend (server.js) with all features
+✅ Complete frontend (public/index.html) with modern UI
+✅ All dependencies configured (package.json)
+✅ Demo data ready to go
+✅ All new features implemented:
+   - Enhanced registration (8 fields)
+   - Event URLs (clickable links)
+   - Smart ticket merging
+
+
+🚀 QUICK START (3 COMMANDS)
+═══════════════════════════════════════════════════════════════════════
+
+1. Install dependencies:
+   npm install
+
+2. Start the server:
+   npm start
+
+3. Open browser:
+   http://localhost:3000
+
+That's it! You're ready to go! 🎉
+
+
+🔑 DEMO LOGIN
+═══════════════════════════════════════════════════════════════════════
+
+Email:    jd1234@columbia.edu
+Password: password123
+
+
+✨ WHAT YOU CAN DO
+═══════════════════════════════════════════════════════════════════════
+
+After logging in:
+
+BUY TICKETS TAB:
+□ Browse available tickets
+□ Search for events
+□ Filter by category
+□ Click event titles (if URL provided)
+□ See merged tickets with price ranges
+□ View all sellers for same event
+□ Contact sellers with payment info
+
+SELL TICKETS TAB:
+□ Create new listings
+□ Add event URLs
+□ Set prices and quantities
+□ View your stats
+□ Edit or delete listings
+
+
+📋 SYSTEM REQUIREMENTS
+═══════════════════════════════════════════════════════════════════════
+
+✓ Node.js v14 or higher
+✓ npm v6 or higher
+✓ Modern web browser
+✓ 100MB free disk space
+
+
+🎯 FIRST TIME SETUP
+═══════════════════════════════════════════════════════════════════════
+
+Step 1: Extract this folder
+   - Windows: Right-click → Extract All
+   - Mac: Double-click the ZIP
+   - Linux: unzip columbia-ticket-marketplace-fresh.zip
+
+Step 2: Open terminal in this folder
+   - Windows: Shift + Right-click → "Open PowerShell here"
+   - Mac: Right-click → "New Terminal at Folder"
+   - Linux: Right-click → "Open Terminal"
+
+Step 3: Install dependencies
+   npm install
+   
+   Wait for it to finish (may take 1-2 minutes)
+
+Step 4: Start server
+   npm start
+   
+   You should see:
+   "Server running on http://localhost:3000"
+   "Demo credentials: jd1234@columbia.edu / password123"
+
+Step 5: Open browser
+   Go to: http://localhost:3000
+   
+Step 6: Login with demo account
+   Email: jd1234@columbia.edu
+   Password: password123
+
+
+🧪 TEST THE NEW FEATURES
+═══════════════════════════════════════════════════════════════════════
+
+Feature 1: Enhanced Registration
+□ Click "Sign Up"
+□ See 8 fields: First/Last Name, Email, Program, Phone, 
+  Payment Method, Payment Handle, Password
+□ Fill everything out and create account
+
+Feature 2: Event URLs
+□ Go to "Sell Tickets" → "+ Create New Listing"
+□ Add an Event URL (like https://ticketmaster.com)
+□ Save and view on "Buy Tickets" tab
+□ Title should be clickable blue link
+□ Click it - opens in new tab
+
+Feature 3: Duplicate Ticket Merging
+□ Create 2 tickets with same title, date, time, location
+□ Use different prices
+□ Go to "Buy Tickets" tab
+□ Should see ONE card with:
+   - Total quantity from both
+   - Price range ($X-$Y)
+   - "Multiple sellers available" badge
+□ Click "View Details"
+□ See both sellers listed separately
+
+
+🐛 TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════════
+
+Problem: "npm: command not found"
+Solution: Install Node.js from https://nodejs.org/
+
+Problem: "Port 3000 is already in use"
+Solution: 
+   - Find and kill process: lsof -i :3000
+   - Or change PORT in server.js (line 12)
+
+Problem: "Cannot find module 'express'"
+Solution: Run: npm install
+
+Problem: Demo login doesn't work
+Solution:
+   - Stop server (Ctrl+C)
+   - Delete db.json: rm db.json
+   - Restart: npm start
+   - Try login again
+
+Problem: Old registration form (missing new fields)
+Solution:
+   - Clear browser cache (Ctrl+Shift+R)
+   - Or open in incognito/private mode
+
+
+📁 FILE STRUCTURE
+═══════════════════════════════════════════════════════════════════════
+
+columbia-ticket-marketplace-fresh/
+├── server.js              ← Backend (Node.js + Express)
+├── public/
+│   └── index.html        ← Frontend (all UI code)
+├── package.json          ← Dependencies list
+├── .gitignore           ← Git ignore rules
+├── README.md            ← Full documentation
+├── SETUP.txt            ← This file
+└── db.json              ← Database (auto-created)
+
+
+🎨 CUSTOMIZATION
+═══════════════════════════════════════════════════════════════════════
+
+Change School Name:
+→ Find/replace "Columbia" throughout the files
+
+Change Colors:
+→ Find/replace "#003865" (Columbia blue)
+
+Change Programs:
+→ Edit dropdown in server.js and index.html
+
+Change Email Domain:
+→ Edit validation in server.js (line ~193)
+
+
+🔒 BEFORE PRODUCTION
+═══════════════════════════════════════════════════════════════════════
+
+□ Change JWT_SECRET in server.js (line 13)
+□ Set up proper database (PostgreSQL/MongoDB)
+□ Enable HTTPS
+□ Add rate limiting
+□ Configure CORS properly
+□ Use environment variables
+□ Set up error monitoring
+
+
+💡 TIPS
+═══════════════════════════════════════════════════════════════════════
+
+• Delete db.json anytime to reset with fresh demo data
+• Use demo account to explore all features
+• Check terminal for backend errors
+• Press F12 in browser to see frontend errors
+• Create duplicate events to test merging feature
+
+
+📞 NEED HELP?
+═══════════════════════════════════════════════════════════════════════
+
+Check:
+1. Node.js installed: node --version
+2. npm installed: npm --version
+3. In correct folder (should see server.js)
+4. Ran npm install
+5. Server running (check terminal)
+6. No errors in browser console (F12)
+
+Common Fixes:
+• npm install --force (if install fails)
+• rm db.json && npm start (if login fails)
+• Clear browser cache (if UI looks old)
+
+
+═══════════════════════════════════════════════════════════════════════
+
+🎉 YOU'RE ALL SET!
+
+Just run:  npm install && npm start
+Then go to:  http://localhost:3000
+
+Everything is ready to use with all features working!
+
+Built with ❤️ for Columbia students
+Ready to launch your marketplace! 🚀
+
+═══════════════════════════════════════════════════════════════════════

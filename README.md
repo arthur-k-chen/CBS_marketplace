@@ -1,244 +1,289 @@
-# Columbia Ticket Exchange
+# Columbia Ticket Exchange - Complete Package
 
-A fully functional marketplace platform for Columbia University students to buy and sell event tickets.
+A fully functional marketplace for Columbia students to buy and sell event tickets.
 
-## Features
+## 🚀 Quick Start (3 Steps)
 
-### For Buyers
-- Browse and search available tickets
-- Filter by category (Sports, Theater, Concerts, Greek Life, Other)
-- View detailed ticket information including seller details
-- Contact sellers directly
-
-### For Sellers
-- Create and manage ticket listings
-- Track views and statistics
-- Edit or delete listings
-- View sales history and revenue
-- Seller rating system
-
-### Security
-- User authentication with JWT tokens
-- Columbia email verification (@columbia.edu)
-- Password hashing with bcrypt
-- Protected API endpoints
-
-## Tech Stack
-
-**Backend:**
-- Node.js with Express
-- LowDB (JSON-based database)
-- JWT for authentication
-- bcryptjs for password hashing
-
-**Frontend:**
-- Vanilla JavaScript
-- Modern CSS with responsive design
-- Columbia University branding
-
-## Installation
-
-### Prerequisites
-- Node.js (v14 or higher)
-- npm
-
-### Setup Steps
-
-1. Navigate to the project directory:
-```bash
-cd columbia-ticket-marketplace
-```
-
-2. Install dependencies:
+### Step 1: Install Dependencies
 ```bash
 npm install
 ```
 
-3. Start the server:
+### Step 2: Start Server
 ```bash
 npm start
 ```
 
-4. Open your browser and navigate to:
+### Step 3: Open Browser
+Navigate to: `http://localhost:3000`
+
+**Demo Login:**
+- Email: `jd1234@columbia.edu`
+- Password: `password123`
+
+---
+
+## ✨ Features
+
+### For Buyers:
+- Browse and search tickets
+- Filter by category (Sports, Theater, Concerts, Greek Life, Other)
+- View merged tickets from multiple sellers
+- See price ranges and total availability
+- Click event URLs to visit event pages
+- Contact sellers with payment information
+
+### For Sellers:
+- Create ticket listings with event URLs
+- Track views and sales statistics
+- Manage all listings from dashboard
+- Edit or delete listings
+- Display payment information to buyers
+
+### New in This Version:
+✅ **Enhanced Registration** - First/Last name, Program, Payment info  
+✅ **Event URLs** - Clickable links in ticket titles  
+✅ **Smart Merging** - Duplicate tickets combined with price ranges  
+
+---
+
+## 📋 System Requirements
+
+- Node.js v14 or higher
+- npm v6 or higher
+- Modern web browser
+
+---
+
+## 🎯 What You Can Do
+
+### Immediate:
+1. Test the demo account
+2. Create new user accounts
+3. List tickets for sale
+4. Browse available tickets
+5. Search and filter events
+
+### Easy Customizations:
+- Change school branding (search for "Columbia")
+- Modify color scheme (search for "#003865")
+- Add new event categories
+- Customize email domain validation
+
+---
+
+## 📁 Project Structure
+
 ```
-http://localhost:3000
+columbia-ticket-marketplace-fresh/
+├── server.js              # Backend API (Node.js + Express)
+├── public/
+│   └── index.html        # Frontend (HTML/CSS/JavaScript)
+├── package.json          # Dependencies
+├── .gitignore           # Git ignore rules
+├── README.md            # This file
+└── db.json              # Database (auto-generated on first run)
 ```
 
-## Usage
+---
 
-### Getting Started
+## 🔧 Configuration
 
-1. **Sign Up** with a Columbia email address (@columbia.edu)
-   - Required fields: Name, Email, School (CC/SEAS/GS/BC), Year
-   - Password will be securely hashed
+### Change Port (default: 3000)
+Edit `server.js` line 12:
+```javascript
+const PORT = 3000; // Change to your preferred port
+```
 
-2. **Or use the demo account:**
-   - Email: `jd1234@columbia.edu`
-   - Password: `password123`
+### Change JWT Secret (IMPORTANT for production)
+Edit `server.js` line 13:
+```javascript
+const JWT_SECRET = 'your-super-secret-random-string';
+```
 
-### Buying Tickets
+Generate a secure secret:
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```
 
-1. Navigate to the "Buy Tickets" tab
-2. Use the search bar or category filters to find tickets
-3. Click on a ticket card to view full details
-4. Contact the seller to complete the transaction
+---
 
-### Selling Tickets
+## 🎨 Customization Examples
 
-1. Navigate to the "Sell Tickets" tab
-2. Click "Create New Listing"
-3. Fill in the ticket details:
-   - Event title, category, date, time, location
-   - Quantity, price per ticket
-   - Section/seat information
-   - Description
-4. Submit to create your listing
-5. Manage your listings from the seller dashboard
+### Change School Name
+Find and replace "Columbia" with your school name throughout the code.
 
-## API Endpoints
+### Change Color Scheme
+Search for `#003865` (Columbia blue) and replace with your school color.
+
+### Modify Programs
+Edit `server.js` and `public/index.html` to change the program dropdown options.
+
+### Add New Categories
+Update the category options in both files.
+
+---
+
+## 📚 User Registration Fields
+
+Users provide:
+- First Name (required)
+- Last Name (required)
+- Columbia Email (required - @columbia.edu)
+- Program (MBA/EMBA/MS/MBA/Other)
+- Phone Number (optional)
+- Payment Method (Venmo/Zelle/PayPal/Other)
+- Payment Handle (@username or email)
+- Password (required)
+
+---
+
+## 🎫 Ticket Features
+
+### Create Listings With:
+- Event title
+- Event URL (optional - becomes clickable link)
+- Category
+- Date and time
+- Location
+- Quantity
+- Price per ticket
+- Section/seat information
+- Description
+
+### Smart Duplicate Merging:
+Tickets with same title, date, time, and location automatically merge to show:
+- Total tickets available across all sellers
+- Price range (e.g., "$25-45")
+- Number of sellers
+- Individual seller details in expanded view
+
+---
+
+## 🚀 Deployment
+
+Ready to deploy to:
+- **Railway** (easiest - 5 minutes)
+- **Render** (free tier available)
+- **Heroku** (classic choice)
+- **DigitalOcean** (scalable)
+- **AWS** (enterprise)
+
+See deployment guides in the original package for detailed instructions.
+
+---
+
+## 🐛 Troubleshooting
+
+### Server won't start?
+```bash
+# Reinstall dependencies
+rm -rf node_modules package-lock.json
+npm install
+npm start
+```
+
+### Can't login?
+```bash
+# Reset database
+rm db.json
+npm start
+# Try demo login again
+```
+
+### Port already in use?
+```bash
+# Kill process on port 3000
+lsof -i :3000
+kill -9 [PID]
+# Or change PORT in server.js
+```
+
+---
+
+## 📞 Support
+
+**Common Issues:**
+- Dependencies error → Run `npm install`
+- Login fails → Delete `db.json` and restart
+- Port in use → Change PORT in `server.js`
+
+**Check:**
+- Node.js version: `node --version` (should be v14+)
+- npm version: `npm --version` (should be v6+)
+- Server logs in terminal for errors
+- Browser console (F12) for frontend errors
+
+---
+
+## 🎓 Demo Data
+
+Includes pre-loaded:
+- 5 user accounts
+- 4 sample tickets across different categories
+- Seller statistics
+- Various event types
+
+Demo account works immediately - no setup needed!
+
+---
+
+## 🔒 Security Notes
+
+**Before Production:**
+- [ ] Change JWT_SECRET to random string
+- [ ] Enable HTTPS
+- [ ] Add rate limiting
+- [ ] Use production database (PostgreSQL/MongoDB)
+- [ ] Configure CORS for specific domains
+- [ ] Add input validation
+- [ ] Set up error monitoring
+
+---
+
+## 📖 API Endpoints
 
 ### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - Login user
+- `POST /api/auth/register` - Create account
+- `POST /api/auth/login` - Login
 
 ### Tickets
-- `GET /api/tickets` - Get all active tickets (with optional filters)
+- `GET /api/tickets` - List all tickets (with filters)
 - `GET /api/tickets/:id` - Get ticket details
-- `POST /api/tickets` - Create new ticket (requires auth)
-- `PUT /api/tickets/:id` - Update ticket (requires auth)
-- `DELETE /api/tickets/:id` - Delete ticket (requires auth)
-- `GET /api/my-tickets` - Get current user's tickets (requires auth)
+- `POST /api/tickets` - Create listing (auth required)
+- `PUT /api/tickets/:id` - Update listing (auth required)
+- `DELETE /api/tickets/:id` - Delete listing (auth required)
 
-### Seller Stats
-- `GET /api/seller-stats` - Get seller statistics (requires auth)
+### Seller
+- `GET /api/my-tickets` - Get user's listings (auth required)
+- `GET /api/seller-stats` - Get seller stats (auth required)
 
-### Transactions
-- `POST /api/transactions` - Create transaction (requires auth)
+---
 
-## Database Structure
+## 💡 Tips
 
-The application uses LowDB with a JSON file (`db.json`) containing:
+1. **Delete `db.json`** if you want fresh demo data
+2. **Clear browser cache** if UI doesn't update
+3. **Check terminal logs** for backend errors
+4. **Check browser console (F12)** for frontend errors
+5. **Use demo account** to explore features quickly
 
-### Users
-```json
-{
-  "id": "uuid",
-  "name": "string",
-  "email": "string",
-  "password": "hashed string",
-  "school": "CC|SEAS|GS|BC",
-  "year": "string",
-  "rating": "number",
-  "createdAt": "ISO datetime"
-}
-```
+---
 
-### Tickets
-```json
-{
-  "id": "uuid",
-  "title": "string",
-  "category": "Sports|Theater|Concerts|Greek Life|Other",
-  "date": "YYYY-MM-DD",
-  "time": "HH:MM",
-  "location": "string",
-  "quantity": "number",
-  "price": "number",
-  "section": "string",
-  "description": "string",
-  "sellerId": "uuid",
-  "sellerName": "string",
-  "sellerSchool": "string",
-  "status": "active|sold",
-  "views": "number",
-  "createdAt": "ISO datetime"
-}
-```
+## 🎉 You're Ready!
 
-### Transactions
-```json
-{
-  "id": "uuid",
-  "ticketId": "uuid",
-  "buyerId": "uuid",
-  "sellerId": "uuid",
-  "quantity": "number",
-  "price": "number",
-  "total": "number",
-  "status": "completed",
-  "createdAt": "ISO datetime"
-}
-```
+Everything is included and ready to run:
+✅ Complete backend with all features  
+✅ Full frontend with modern UI  
+✅ Demo data pre-configured  
+✅ All dependencies listed  
 
-## Security Considerations
-
-### For Production Deployment
-
-1. **Environment Variables**: Move sensitive data to environment variables
-   ```javascript
-   const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
-   ```
-
-2. **HTTPS**: Enable HTTPS for secure communication
-
-3. **Rate Limiting**: Add rate limiting to prevent abuse
-   ```bash
-   npm install express-rate-limit
-   ```
-
-4. **Input Validation**: Add comprehensive input validation
-   ```bash
-   npm install express-validator
-   ```
-
-5. **Database**: Use a production database (PostgreSQL, MongoDB)
-
-6. **CORS**: Configure CORS for specific domains only
-
-7. **Email Verification**: Add email verification for new accounts
-
-8. **Payment Integration**: Integrate Stripe or PayPal for secure payments
-
-## Future Enhancements
-
-- [ ] Real-time messaging between buyers and sellers
-- [ ] Push notifications for new listings
-- [ ] Image uploads for tickets
-- [ ] Advanced search and filtering
-- [ ] User reviews and ratings
-- [ ] Payment processing integration
-- [ ] Mobile app (React Native)
-- [ ] Email notifications
-- [ ] Ticket verification system
-- [ ] Admin dashboard for moderation
-
-## Development
-
-### Project Structure
-```
-columbia-ticket-marketplace/
-├── server.js           # Backend server and API
-├── public/
-│   └── index.html     # Frontend application
-├── db.json            # Database file (auto-generated)
-├── package.json       # Dependencies
-└── README.md          # This file
-```
-
-### Running in Development Mode
+Just run:
 ```bash
-npm run dev
+npm install
+npm start
 ```
 
-## License
+**Built with ❤️ for Columbia students**
 
-MIT
-
-## Support
-
-For issues or questions, please contact the development team or create an issue in the repository.
-
-## Acknowledgments
-
-- Columbia University for the inspiration
-- Built with ❤️ for the Columbia community
+Ready to launch your ticket marketplace! 🚀
